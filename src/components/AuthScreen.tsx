@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react';
-import { CheckSquare, Loader2, Mail, Lock, AlertCircle } from 'lucide-react';
+import { CheckSquare, Loader2, Mail, Lock, AlertCircle, Sparkles } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 export default function AuthScreen() {
@@ -26,10 +26,10 @@ export default function AuthScreen() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-50 via-lime-50 to-green-100 px-4">
       <div className="w-full max-w-md">
         <div className="flex flex-col items-center mb-8">
-          <div className="w-14 h-14 rounded-2xl bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-600/20 mb-4">
+          <div className="w-14 h-14 rounded-2xl bg-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-600/20 mb-4">
             <CheckSquare className="w-7 h-7 text-white" strokeWidth={2.2} />
           </div>
           <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Tasked</h1>
@@ -38,8 +38,8 @@ export default function AuthScreen() {
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-xl shadow-slate-200/60 border border-slate-100 p-8">
-          <div className="flex gap-1 p-1 bg-slate-100 rounded-xl mb-6">
+        <div className="bg-white/90 rounded-2xl shadow-xl shadow-emerald-100/70 border border-emerald-100 p-8">
+          <div className="flex gap-1 p-1 bg-emerald-50 rounded-xl mb-6">
             <button
               type="button"
               onClick={() => switchMode('login')}
@@ -106,7 +106,7 @@ export default function AuthScreen() {
             <button
               type="submit"
               disabled={busy}
-              className="w-full py-2.5 bg-blue-600 hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 shadow-sm shadow-blue-600/20"
+              className="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 shadow-sm shadow-emerald-600/20"
             >
               {busy && <Loader2 className="w-4 h-4 animate-spin" />}
               {mode === 'login' ? '로그인' : '회원가입'}
@@ -118,7 +118,7 @@ export default function AuthScreen() {
             <button
               type="button"
               onClick={() => switchMode(mode === 'login' ? 'signup' : 'login')}
-              className="text-blue-600 font-medium hover:underline"
+              className="text-emerald-600 font-medium hover:underline"
             >
               {mode === 'login' ? '회원가입' : '로그인'}
             </button>
